@@ -1,3 +1,9 @@
+# NOTE: Changes to the file format of this configuration file
+# should be reflected to the gitlab issue that keeps track
+# of the final format of this configuration file:
+#
+#  https://gitlab.com/BeyondPlanck/repo/issues/69
+
 
 # Allows us to mark the current reproducable.yml file format version
 version: '0.1'
