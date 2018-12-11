@@ -1,0 +1,43 @@
+
+# Allows us to mark the current reproducable.yml file format version
+version: '0.1'
+
+# Identify the list of input files used in this RiS workflow
+# NOTE: "Most" of the input files, early in the RiS adoption curve,
+# will NOT be packaged or identified by ID, so we need to address this
+inputs:
+  service: zenodo
+  # Full RiS ID means the whole package
+  - id: ris-12345
+  # This notation will allow to pick a file out of
+  # a (potentially) large package
+  - id: ris-99999:/lfi/some_file.fits
+
+# Specify where the code cane be accesses from
+code:
+  # Mark what kind of Source Code Management tool we are talking about
+  # Initially only 'git' supported, but svn should be next
+  scm: git
+  # Repository location; Should be publicly accessible (no credentials needed)
+  repo: https://gitlab.com/BeyondPlanck/repo.git
+  # OPTIONAL: Branch to be used (defaults to master)
+  branch: master
+  # OPTIONAL: Location where the required code resides
+  # For example, as in the case of BeyondPlanck, we might be interested
+  # in code located to a specific directory only
+  directory: WP9/reproducability/usecase
+
+
+output:
+  # Service where you would like to store/share your code results
+  service: zenodo 
+  user: my_zenodo_username
+  password: # the rscli tool will interactively ask on terminal
+            # or you could set an RS_PASSWORD env variable. 
+
+  files:
+    # as a single file only
+    - output/planets_volume.csv
+    # or as a folder, where the folder will be .tar.gz
+    - output/
+    
