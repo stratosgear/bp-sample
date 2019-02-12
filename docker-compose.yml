@@ -5,7 +5,7 @@ services:
     build: .
     image: stratos/ris-usecase
     volumes:
-      - ./input:/data/input
+      - ./inputs:/data/inputs
       - ./output:/data/output
       - ./code:/code
     working_dir: /code

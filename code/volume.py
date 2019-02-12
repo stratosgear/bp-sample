@@ -7,7 +7,7 @@ def calc_volume(diameter):
 
 
 # Read the input file
-df = pd.read_csv('/data/input/planets.csv')
+df = pd.read_csv('/data/inputs/planets.csv')
 
 # Perform the calculations
 df['volume'] = df['diameter'].apply(calc_volume)

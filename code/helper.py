@@ -10,7 +10,7 @@ def create_diameters():
                              120500, 51120, 49530, 2301]
                 }
     df = pd.DataFrame(raw_data, columns=['planet', 'diameter'])
-    df.to_csv('/data/input/planets.csv', index=False)
+    df.to_csv('/data/inputs/planets.csv', index=False)
 
 
 if __name__ == "__main__":
